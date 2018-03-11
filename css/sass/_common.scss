@@ -1,0 +1,100 @@
+/* General Styles */
+
+//Normalize
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+a {
+  background-color: transparent;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font;
+}
+
+header {
+  padding: $separation-big;
+  text-align: center;
+
+  h1 {
+    color: $primary-color;
+    font-size: $big-font;
+    line-height: $big-font;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: $separation-small;
+    border-bottom: 2px solid $primary-color;
+  }
+}
+
+//Common container
+.container {
+  width: 100%;
+  max-width: $big-layout;
+  margin: 0 auto;
+}
+
+main {
+  padding: 0 $separation-big;
+
+  .tabs {
+    @include flexbox();
+    @include flex-wrap(wrap);
+    @include flex-direction(row);
+
+    input {
+      display: none;
+
+      &:checked {
+        + label {
+          background-color: darken($complementary-color, 5%);
+          color: $white;
+        }
+
+        + label + .content-block {
+          display: block;
+        }
+      }
+    }
+
+    label {
+      color: $white;
+      cursor: pointer;
+      width: auto;
+      font-size: $medium-font;
+      line-height: $medium-font;
+      padding: $separation-normal $separation-big;
+      background-color: lighten($seconday-color, 10%);
+      @include transition(all, $normal, ease-in);
+
+      &:hover {
+        background-color: darken($seconday-color, 5%);
+        @include transition(all, $normal, ease-out);
+      }
+
+      @media screen and (max-width: $medium-layout) {
+        width: 100%;
+      }
+    }
+
+    .content-block {
+      border: 1px solid darken($complementary-color, 5%);
+      color: lighten($black, 10%);
+      display: none;
+      padding: $separation-big;
+      order: 99;
+
+      @media screen and (max-width: $medium-layout) {
+        order: inherit;
+      }
+    }
+  }
+}

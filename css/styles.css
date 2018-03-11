@@ -1,0 +1,92 @@
+/* Helpers & Mixins */
+/* Variables */
+/* General Styles */
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%; }
+
+* {
+  box-sizing: border-box; }
+
+a {
+  background-color: transparent; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Quattrocento Sans", sans-serif; }
+
+header {
+  padding: 30px;
+  text-align: center; }
+  header h1 {
+    color: #005899;
+    font-size: 26px;
+    line-height: 26px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #005899; }
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; }
+
+main {
+  padding: 0 30px; }
+  main .tabs {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row; }
+    main .tabs input {
+      display: none; }
+      main .tabs input:checked + label {
+        background-color: #ff6a4c;
+        color: #FFFFFF; }
+      main .tabs input:checked + label + .content-block {
+        display: block; }
+    main .tabs label {
+      color: #FFFFFF;
+      cursor: pointer;
+      width: auto;
+      font-size: 18px;
+      line-height: 18px;
+      padding: 20px 30px;
+      background-color: #7aa5bb;
+      -webkit-transition: all 0.3s ease-in;
+      -moz-transition: all 0.3s ease-in;
+      -ms-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in; }
+      main .tabs label:hover {
+        background-color: #4e809a;
+        -webkit-transition: all 0.3s ease-out;
+        -moz-transition: all 0.3s ease-out;
+        -ms-transition: all 0.3s ease-out;
+        -o-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out; }
+      @media screen and (max-width: 767px) {
+        main .tabs label {
+          width: 100%; } }
+    main .tabs .content-block {
+      border: 1px solid #ff6a4c;
+      color: #1a1a1a;
+      display: none;
+      padding: 30px;
+      order: 99; }
+      @media screen and (max-width: 767px) {
+        main .tabs .content-block {
+          order: inherit; } }
+
+/*# sourceMappingURL=styles.css.map */
