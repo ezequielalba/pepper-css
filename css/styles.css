@@ -56,7 +56,8 @@ main {
         color: #FFFFFF; }
       main .tabs input:checked + label + .content-block {
         display: block; }
-    main .tabs label {
+    main .tabs label,
+    main .tabs .tab {
       color: #FFFFFF;
       cursor: pointer;
       width: auto;
@@ -69,7 +70,15 @@ main {
       -ms-transition: all 0.3s ease-in;
       -o-transition: all 0.3s ease-in;
       transition: all 0.3s ease-in; }
-      main .tabs label:hover {
+      main .tabs label.active,
+      main .tabs .tab.active {
+        background-color: #ff6a4c;
+        color: #FFFFFF; }
+        main .tabs label.active + .content-block,
+        main .tabs .tab.active + .content-block {
+          display: block; }
+      main .tabs label:hover,
+      main .tabs .tab:hover {
         background-color: #4e809a;
         -webkit-transition: all 0.3s ease-out;
         -moz-transition: all 0.3s ease-out;
@@ -77,14 +86,16 @@ main {
         -o-transition: all 0.3s ease-out;
         transition: all 0.3s ease-out; }
       @media screen and (max-width: 767px) {
-        main .tabs label {
+        main .tabs label,
+        main .tabs .tab {
           width: 100%; } }
     main .tabs .content-block {
       border: 1px solid #ff6a4c;
       color: #1a1a1a;
       display: none;
       padding: 30px;
-      order: 99; }
+      order: 99;
+      width: 100%; }
       @media screen and (max-width: 767px) {
         main .tabs .content-block {
           order: inherit; } }

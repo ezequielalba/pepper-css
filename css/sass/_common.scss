@@ -65,7 +65,8 @@ main {
       }
     }
 
-    label {
+    label,
+    .tab {
       color: $white;
       cursor: pointer;
       width: auto;
@@ -74,6 +75,15 @@ main {
       padding: $separation-normal $separation-big;
       background-color: lighten($seconday-color, 10%);
       @include transition(all, $normal, ease-in);
+
+      &.active {
+        background-color: darken($complementary-color, 5%);
+        color: $white;
+
+        + .content-block {
+          display: block;
+        }
+      }
 
       &:hover {
         background-color: darken($seconday-color, 5%);
@@ -91,6 +101,7 @@ main {
       display: none;
       padding: $separation-big;
       order: 99;
+      width: 100%;
 
       @media screen and (max-width: $medium-layout) {
         order: inherit;
